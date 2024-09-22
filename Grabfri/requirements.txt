@@ -1,0 +1,5 @@
+vk~=3.0
+matplotlib~=3.9.2
+networkx~=3.3
+vk_api
+scipy
