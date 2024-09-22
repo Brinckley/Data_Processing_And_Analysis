@@ -16,3 +16,10 @@ class User:
 
     def __str__(self):
         return "{0} {1}\n".format(self.first_name, self.last_name)
+
+    def __eq__(self, other):
+        if not isinstance(other, type(self)): return NotImplemented
+        return self.id == other.id and self.first_name == other.first_name and self.last_name == other.last_name
+
+    def __hash__(self):
+        return hash((self.id, self.first_name, self.last_name))
