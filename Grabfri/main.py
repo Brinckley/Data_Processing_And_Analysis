@@ -52,6 +52,7 @@ def main():
 
     for base_user in base_users:
         friends.extend(get_friends(vk, base_user))
+    friends.extend(base_users)
 
     friends = set(friends)
     for friend in friends:
