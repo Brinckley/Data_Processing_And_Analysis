@@ -15,7 +15,7 @@ class User:
         self.domain = us_info["domain"]
 
     def __str__(self):
-        return "{0} {1}\n".format(self.first_name, self.last_name)
+        return "{0} {1} {2}\n".format(self.id, self.first_name, self.last_name)
 
     def __eq__(self, other):
         if not isinstance(other, type(self)): return NotImplemented
