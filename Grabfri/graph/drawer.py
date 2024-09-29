@@ -6,7 +6,7 @@ from pyvis import network as net
 
 
 def draw_graph(networkx_graph, graph_title):
-    pyvis_graph = net.Network(height="1000px", width="100%", bgcolor="#222222", font_color="white", notebook=True)
+    pyvis_graph = net.Network(height="1500px", width="1900px", bgcolor="#222222", font_color="white", notebook=True)
     pyvis_graph.repulsion()
     # for each node and its attributes in the networkx graph
     for node, node_attrs in networkx_graph.nodes(data=True):
@@ -20,14 +20,16 @@ def draw_graph(networkx_graph, graph_title):
             edge_attrs['value'] = edge_attrs['weight']
         # add the edge
         pyvis_graph.add_edge(str(source), str(target), **edge_attrs)
-    # return and also save
-    return pyvis_graph.show(graph_title)
+
+    pyvis_graph.toggle_physics(False)
+    pyvis_graph.show_buttons(filter_=['physics'])
+    pyvis_graph.show(graph_title, notebook=False)
 
 
 def draw_graph_highlighted(networkx_graph: networkx.Graph, highlighted_nodes: list[str], graph_title: str):
     highlighted_nodes = [x[0] for x in highlighted_nodes]
 
-    pyvis_graph = net.Network(height="1000px", width="100%", bgcolor="#222222", font_color="white", notebook=True)
+    pyvis_graph = net.Network(height="1500px", width="1900px", bgcolor="#222222", font_color="white", notebook=True)
     pyvis_graph.repulsion()
 
     # for each node and its attributes in the networkx graph
@@ -45,5 +47,7 @@ def draw_graph_highlighted(networkx_graph: networkx.Graph, highlighted_nodes: li
             edge_attrs['value'] = edge_attrs['weight']
         # add the edge
         pyvis_graph.add_edge(str(source), str(target), **edge_attrs)
-    # return and also save
-    return pyvis_graph.show(graph_title)
+
+    pyvis_graph.toggle_physics(False)
+    pyvis_graph.show_buttons(filter_=['physics'])
+    pyvis_graph.show(graph_title, notebook=False)
