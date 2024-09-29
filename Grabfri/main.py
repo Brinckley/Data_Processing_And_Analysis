@@ -1,26 +1,9 @@
-
-import time
-import vk_api
-import matplotlib.pyplot as plt
-from matplotlib import pylab
 import networkx as nx
-import json
-from collections import defaultdict
 
-import util
 from util import *
-from user import User
 
 from graph import algo
 from graph import drawer
-
-
-def get_friends(vk, user_id):
-    friends = vk.friends.get(user_id=user_id, fields='domain')
-    lst = [User(fr) for fr in friends["items"]]
-    print(lst)
-    time.sleep(0.005)
-    return lst
 
   
 def main():
