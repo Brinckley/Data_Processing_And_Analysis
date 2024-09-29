@@ -25,9 +25,6 @@ def draw_graph(networkx_graph, graph_title):
     pyvis_graph.show_buttons(filter_=['physics'])
     pyvis_graph.show(graph_title, notebook=False)
 
-    # return and also save
-    return pyvis_graph.show(graph_title)
-
 
 def draw_graph_highlighted(networkx_graph: networkx.Graph, highlighted_nodes: list[str], graph_title: str):
     highlighted_nodes = [x[0] for x in highlighted_nodes]
@@ -54,6 +51,3 @@ def draw_graph_highlighted(networkx_graph: networkx.Graph, highlighted_nodes: li
     pyvis_graph.toggle_physics(False)
     pyvis_graph.show_buttons(filter_=['physics'])
     pyvis_graph.show(graph_title, notebook=False)
-
-    # return and also save
-    return pyvis_graph.show(graph_title)
