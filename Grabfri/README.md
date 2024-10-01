@@ -18,3 +18,26 @@ Create the *token.txt* file in the *Grabfri* project and paste the token there.
 
 Put all wanted ids in the *user_ids.txt* file. You should use only numeric ids!
 Install the requirements and start the program.
+
+```
+Calculating closeness eigenvector of graph
+User name 268235974 Руся Яминов with value 0.5315008023247143
+User name 207227130 Матвей Волков with value 0.13127455250525
+User name 168420440 Мария Лагуткина with value 0.10711856944502657
+User name 150078285 Семён Бугреев with value 0.08712075450705842
+User name 7894249 Денис Махачев with value 0.08088789838178014
+ 
+Calculating closeness centrality of graph
+User name Руся Яминов 
+User name Мария Лагуткина
+User name Матвей Волков
+User name Ангелина Хренникова
+User name Ирфан Алимов
+
+Calculating betweenness centrality of graph
+User name Руся Яминов 
+User name Мария Лагуткина
+User name Ангелина Хренникова
+User name Матвей Волков
+User name Ирфан Алимов
+```
