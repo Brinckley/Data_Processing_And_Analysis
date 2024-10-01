@@ -8,7 +8,7 @@
 
 ## Graph:
 
-![img](https://github.com/lina-tucha/Data_Processing_And_Analysis/blob/main/Grabfri/team.svg)
+![img](https://github.com/lina-tucha/Data_Processing_And_Analysis/blob/main/Grabfri/gragh_image.png)
 
 ## Parsing friends of friends ids and building graph
 
