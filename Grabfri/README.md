@@ -1,10 +1,10 @@
 # Grabfi
 
 ## Team:
-- Мария Лагуткина, группа М8О-209М-23
-- Савин Александр, группа М8О-214М-23
-- Свинаренко Владисла, группа М8О-209М-23
-- Хренникова Ангелина, группа М8О-209М-23
+- Мария Лагуткина, группа М8О-209М-23 (168420440)
+- Савин Александр, группа М8О-214М-23 (220523027)
+- Свинаренко Владисла, группа М8О-209М-23 (50933461)
+- Хренникова Ангелина, группа М8О-209М-23 (198216820)
 
 ## Graph:
 
@@ -21,23 +21,21 @@ Install the requirements and start the program.
 
 ```
 Calculating closeness eigenvector of graph
-User name 268235974 Руся Яминов with value 0.5315008023247143
-User name 207227130 Матвей Волков with value 0.13127455250525
-User name 168420440 Мария Лагуткина with value 0.10711856944502657
-User name 150078285 Семён Бугреев with value 0.08712075450705842
-User name 7894249 Денис Махачев with value 0.08088789838178014
- 
+User name 168420440 with value 0.0001198045257558153
+User name 198216820 with value 2.405864785156243e-06
+User name 220523027 with value 2.281481752383861e-07
+User name 50933461 with value 5.119506057853398e-08
+
 Calculating closeness centrality of graph
-User name Руся Яминов 
-User name Мария Лагуткина
-User name Матвей Волков
-User name Ангелина Хренникова
-User name Ирфан Алимов
+User name 168420440 with value 0.0001198045257558153
+User name 198216820 with value 2.405864785156243e-06
+User name 220523027 with value 2.281481752383861e-07
+User name 50933461 with value 5.119506057853398e-08
 
 Calculating betweenness centrality of graph
-User name Руся Яминов 
-User name Мария Лагуткина
-User name Ангелина Хренникова
-User name Матвей Волков
-User name Ирфан Алимов
+User name 168420440 with value 0.0001198045257558153
+User name 198216820 with value 2.405864785156243e-06
+User name 220523027 with value 2.281481752383861e-07
+User name 50933461 with value 5.119506057853398e-08
+
 ```

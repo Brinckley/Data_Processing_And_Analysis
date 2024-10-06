@@ -121,10 +121,54 @@ def read_json_to_dict(json_file):
     return nx.from_dict_of_lists(data)
 
 
+def calc_by_eigenvector(graph):
+    eigenvector_centers = list(nx.eigenvector_centrality(graph).items())
+    sorted_items = sorted(eigenvector_centers, key=lambda i: i[1], reverse=True)
+    return sorted_items
+
+
+def calc_by_closeness(graph):
+    eigenvector_centers = list(nx.closeness_centrality(graph).items())
+    sorted_items = sorted(eigenvector_centers, key=lambda i: i[1], reverse=True)
+    return sorted_items
+
+
+def calc_by_betweenness(graph):
+    eigenvector_centers = list(nx.betweenness_centrality(graph).items())
+    sorted_items = sorted(eigenvector_centers, key=lambda i: i[1], reverse=True)
+    return sorted_items
+
+
+
 def main():
-    parse_users("user_ids.txt")
+    group_ids = ['168420440', '50933461',  '198216820', '220523027']
+    # parse_users("user_ids.txt")
 
     nxgraph = read_json_to_dict("full_dataset.json")
+
+    print("Calculating closeness eigenvector of graph")
+    eigenvector_res = calc_by_eigenvector(nxgraph)
+    print("Сloseness eigenvector of graph calculated ...")
+    for eres in eigenvector_res:
+        if eres[0] in group_ids:
+            print("User name {} with value {}".format(eres[0], eres[1]))
+
+    print("Calculating closeness centrality of graph")
+    closeness_res = calc_by_eigenvector(nxgraph)
+    print("Сloseness centrality of graph calculated ...")
+    for cres in closeness_res:
+        if cres[0] in group_ids:
+            print("User name {} with value {}".format(cres[0], cres[1]))
+
+
+    print("Calculating betweenness centrality of graph")
+    betweenness_res = calc_by_eigenvector(nxgraph)
+    print("Сloseness betweenness of graph calculated ...")
+    for bres in betweenness_res:
+        if bres[0] in group_ids:
+            print("User name {} with value {}".format(bres[0], bres[1]))
+
+
 
 
 if __name__ == '__main__':
