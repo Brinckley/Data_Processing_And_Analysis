@@ -8,7 +8,7 @@
 
 ## Graph:
 
-![img](https://github.com/Brinckley/Data_Processing_And_Analysis/blob/main/Grabfri/AllPhotos/BaseGraph/image_2024-09-30_19-45-33.png)
+![img](https://github.com/Brinckley/Data_Processing_And_Analysis/blob/main/Grabfri/full_graph_img.png)
 
 ## Parsing friends of friends ids and building graph
 
