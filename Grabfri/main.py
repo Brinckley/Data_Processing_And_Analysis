@@ -128,14 +128,14 @@ def calc_by_eigenvector(graph):
 
 
 def calc_by_closeness(graph):
-    eigenvector_centers = list(nx.closeness_centrality(graph).items())
-    sorted_items = sorted(eigenvector_centers, key=lambda i: i[1], reverse=True)
+    closeness_centers = list(nx.closeness_centrality(graph).items())
+    sorted_items = sorted(closeness_centers, key=lambda i: i[1], reverse=True)
     return sorted_items
 
 
 def calc_by_betweenness(graph):
-    eigenvector_centers = list(nx.betweenness_centrality(graph).items())
-    sorted_items = sorted(eigenvector_centers, key=lambda i: i[1], reverse=True)
+    betweenness_centers = list(nx.betweenness_centrality(graph).items())
+    sorted_items = sorted(betweenness_centers, key=lambda i: i[1], reverse=True)
     return sorted_items
 
 
@@ -154,7 +154,7 @@ def main():
             print("User name {} with value {}".format(eres[0], eres[1]))
 
     print("Calculating closeness centrality of graph")
-    closeness_res = calc_by_eigenvector(nxgraph)
+    closeness_res = calc_by_closeness(nxgraph)
     print("Сloseness centrality of graph calculated ...")
     for cres in closeness_res:
         if cres[0] in group_ids:
@@ -162,7 +162,7 @@ def main():
 
 
     print("Calculating betweenness centrality of graph")
-    betweenness_res = calc_by_eigenvector(nxgraph)
+    betweenness_res = calc_by_betweenness(nxgraph)
     print("Сloseness betweenness of graph calculated ...")
     for bres in betweenness_res:
         if bres[0] in group_ids:
