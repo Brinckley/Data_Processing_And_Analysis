@@ -5,7 +5,6 @@ import os
 
 import networkx as nx
 
-
 existing_friends_dict = {}
 friend_set = set()
 
@@ -118,6 +117,7 @@ def parse_users(user_ids_filename):
 def read_json_to_dict(json_file):
     with open(json_file) as json_file:
         data = json.load(json_file)
+    data = {int(key): value for key, value in data.items()}
     return nx.from_dict_of_lists(data)
 
 
@@ -139,10 +139,9 @@ def calc_by_betweenness(graph):
     return sorted_items
 
 
-
 def main():
-    group_ids = ['290530655', '1931147', '207227130', '24435047', '138042735',  '172244589', '168420440',
-                 '711398942', '65657314', '176183602', '50933461', '198216820', '268235974', '220523027']
+    group_ids = [290530655, 1931147, 207227130, 24435047, 138042735, 172244589, 168420440,
+                 711398942, 65657314, 176183602, 50933461, 198216820, 268235974, 220523027]
     # parse_users("user_ids.txt")
 
     nxgraph = read_json_to_dict("full_dataset.json")
@@ -158,18 +157,15 @@ def main():
     closeness_res = calc_by_closeness(nxgraph)
     print("Сloseness centrality of graph calculated ...")
     for cres in closeness_res:
-        if cres[0] in group_ids:
-            print("User name {} with value {}".format(cres[0], cres[1]))
-
+       if cres[0] in group_ids:
+           print("User name {} with value {}".format(cres[0], cres[1]))
 
     print("Calculating betweenness centrality of graph")
     betweenness_res = calc_by_betweenness(nxgraph)
     print("Сloseness betweenness of graph calculated ...")
     for bres in betweenness_res:
-        if bres[0] in group_ids:
-            print("User name {} with value {}".format(bres[0], bres[1]))
-
-
+       if bres[0] in group_ids:
+           print("User name {} with value {}".format(bres[0], bres[1]))
 
 
 if __name__ == '__main__':

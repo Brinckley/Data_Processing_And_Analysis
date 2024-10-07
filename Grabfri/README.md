@@ -21,21 +21,24 @@ Install the requirements and start the program.
 
 ```
 Calculating closeness eigenvector of graph
-User name 168420440 with value 0.0001198045257558153
-User name 198216820 with value 2.405864785156243e-06
-User name 220523027 with value 2.281481752383861e-07
-User name 50933461 with value 5.119506057853398e-08
+User name 168420440 with value 0.0001696388076520314
+User name 1931147 with value 8.862445238078442e-06
+User name 290530655 with value 7.3205986483760225e-06
+User name 711398942 with value 2.775535324668156e-06
+User name 198216820 with value 2.7011192399565775e-06
+User name 207227130 with value 5.432620061853274e-07
+User name 220523027 with value 3.120922571567494e-07
+User name 172244589 with value 2.5348264073660236e-07
+User name 50933461 with value 6.268539046451648e-08
+User name 24435047 with value 3.007728155439675e-08
+User name 176183602 with value 2.787633158855468e-08
+User name 268235974 with value 1.7605222469915988e-08
+User name 65657314 with value 1.5365275836726827e-08
 
 Calculating closeness centrality of graph
-User name 168420440 with value 0.0001198045257558153
-User name 198216820 with value 2.405864785156243e-06
-User name 220523027 with value 2.281481752383861e-07
-User name 50933461 with value 5.119506057853398e-08
+
 
 Calculating betweenness centrality of graph
-User name 168420440 with value 0.0001198045257558153
-User name 198216820 with value 2.405864785156243e-06
-User name 220523027 with value 2.281481752383861e-07
-User name 50933461 with value 5.119506057853398e-08
+
 
 ```
