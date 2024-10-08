@@ -4,3 +4,4 @@ networkx~=3.3
 vk_api
 scipy
 pyvis
+nx_cugraph

@@ -4,6 +4,8 @@ import json
 import os
 
 import networkx as nx
+import nx_cugraph as nxcg
+
 
 existing_friends_dict = {}
 friend_set = set()
@@ -138,6 +140,16 @@ def calc_by_betweenness(graph):
     sorted_items = sorted(betweenness_centers, key=lambda i: i[1], reverse=True)
     return sorted_items
 
+def calc_by_eigenvector(graph):
+    eigenvector_centers = nxcg.eigenvector_centrality(graph)
+    return eigenvector_centers
+
+
+def calc_by_betweenness(graph):
+    betweenness_centers = nxcg.betweenness_centrality(graph, k=1000)
+    return betweenness_centers
+
+
 
 def main():
     group_ids = [290530655, 1931147, 207227130, 24435047, 138042735, 172244589, 168420440,
@@ -149,23 +161,30 @@ def main():
     print("Calculating closeness eigenvector of graph")
     eigenvector_res = calc_by_eigenvector(nxgraph)
     print("Сloseness eigenvector of graph calculated ...")
-    for eres in eigenvector_res:
-        if eres[0] in group_ids:
-            print("User name {} with value {}".format(eres[0], eres[1]))
+    for user_id in group_ids:
+        if user_id in eigenvector_res:
+            print(f"User name {user_id} with value {eigenvector_res[user_id]}")
+        else:
+            print(f"User {user_id} not in dataset")
+
+    del eigenvector_res
 
     print("Calculating closeness centrality of graph")
-    closeness_res = calc_by_closeness(nxgraph)
+    closeness_res = {user_id: nx.closeness_centrality(nxgraph, user_id) for user_id in group_ids}
     print("Сloseness centrality of graph calculated ...")
-    for cres in closeness_res:
-       if cres[0] in group_ids:
-           print("User name {} with value {}".format(cres[0], cres[1]))
+    for user_id in group_ids:
+        print(f"User name {user_id} with value {closeness_res[user_id]}")
+
+    del closeness_res
 
     print("Calculating betweenness centrality of graph")
     betweenness_res = calc_by_betweenness(nxgraph)
     print("Сloseness betweenness of graph calculated ...")
-    for bres in betweenness_res:
-       if bres[0] in group_ids:
-           print("User name {} with value {}".format(bres[0], bres[1]))
+    for user_id in group_ids:
+        if user_id in betweenness_res:
+            print(f"User name {user_id} with value {betweenness_res[user_id]}")
+        else:
+            print(f"User {user_id} not in dataset")
 
 
 if __name__ == '__main__':
